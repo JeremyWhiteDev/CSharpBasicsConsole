@@ -1,4 +1,6 @@
-﻿namespace CSharpBasicsConsole
+﻿using CSharpBasicsConsole.Classes;
+
+namespace CSharpBasicsConsole
 {
     internal class Program
     {
@@ -8,52 +10,76 @@
              * Name: Brian Neal
              * Favorite day of the week: Wednesday
              * Least favorite school subject: Gym
+             * 
+             * const userInput = {
+             *    name: "Brian",
+             *    favoriteDayOfWeek: "Wednesday",
+             *    leastFavoriteSubject: "Gym"
+             * 
+             * }
+             * 
+             * 
+             * 
              */
+
+            //object userInput = new
+            //{
+            //    Name = "Test",
+            //    FavoriteDay = "Wednesday",
+            //    LeastFavoriteSubject = "Gym",
+            //    Age = 0
+            //};
+
+           
+            UserInput userInput = new UserInput();
 
             Console.Write("Enter your name: ");
             
             // ? - putting a ? after a Type makes it so that it is nullable, which means the value of that thing is allowed to be null
-            string? name = Console.ReadLine();
+            userInput.Name = Console.ReadLine();
 
-            while (String.IsNullOrWhiteSpace(name))
+            while (String.IsNullOrWhiteSpace(userInput.Name))
             {
                 Console.WriteLine("Please enter a valid name: ");
-                name = Console.ReadLine();
+                userInput.Name = Console.ReadLine();
             }
             Console.Clear();
 
             Console.Write("What is your favorite day of the week? ");
-            string? dayOfWeek = Console.ReadLine();
-
+            userInput.FavoriteDayOfWeek = Console.ReadLine();
 
             //I'm making a change and adding this comment
             //I made this change on a branch
 
 
-            while (String.IsNullOrWhiteSpace(dayOfWeek))
+            while (String.IsNullOrWhiteSpace(userInput.FavoriteDayOfWeek))
             {
                 Console.WriteLine("Please enter a valid day of the week: ");
-                dayOfWeek = Console.ReadLine();
+                userInput.FavoriteDayOfWeek = Console.ReadLine();
             }
             Console.Clear();
 
             Console.Write("What is/was your least favorite subject in school? ");
-            string? leastFaveSchoolSubject = Console.ReadLine();
+            userInput.LeastFavoriteSubject = Console.ReadLine();
 
-            while (String.IsNullOrWhiteSpace(leastFaveSchoolSubject))
+            while (String.IsNullOrWhiteSpace(userInput.LeastFavoriteSubject))
             {
                 Console.WriteLine("Please enter a valid school subject: ");
-                leastFaveSchoolSubject = Console.ReadLine();
+                userInput.LeastFavoriteSubject = Console.ReadLine();
             }
             Console.Clear();
 
 
             // @ - string verbatim, keeps alllllllll spacing, new lines, white space, etc
-            string displayText = @$"Name: {name}
-                                    Favorite Day of the Week: {dayOfWeek}
-                                    Least Favorite School Subject: {leastFaveSchoolSubject}";
+            
 
-            Console.Write(displayText);
+            //const myFunction = () => {do some stuff}
+            //const myFunction = (name) => {do some stuff}
+
+            Console.Write(userInput);
+            
+            //Console.Write(displayText);
+            //Console.Write(1);
 
             Console.ReadLine();
 
@@ -67,8 +93,8 @@
             //}
 
             //Console.WriteLine($"Hello, {input}.");
-        }
 
+        }
         
     }
 
