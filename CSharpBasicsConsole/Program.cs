@@ -25,6 +25,11 @@
             Console.Write("What is your favorite day of the week? ");
             string? dayOfWeek = Console.ReadLine();
 
+
+            //I'm making a change and adding this comment
+            //I made this change on a branch
+
+
             while (String.IsNullOrWhiteSpace(dayOfWeek))
             {
                 Console.WriteLine("Please enter a valid day of the week: ");
